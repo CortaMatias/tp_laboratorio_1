@@ -62,7 +62,7 @@ int listarPasajeros(Passenger *list, int len)
 		{
 			printf("\n** No hay empleados en el sistema.** ");
 		}
-		printf("\n\n");
+
 
 		todoOk = 1;
 	}
@@ -102,7 +102,7 @@ int mostrarPasajero(Passenger *list)
 		{
 			strcpy(estado, "Cancelado");
 		}
-		printf(" %04d %10s  %10s    %5.2f  %10s  %11s   %10s\n", list->id, list->name, list->lastName, list->price, list->flycode, tipo,
+		printf(" %04d %10s  %10s    %6.2f  %10s  %11s   %10s\n", list->id, list->name, list->lastName, list->price, list->flycode, tipo,
 			   estado);
 		todoOk = 1;
 	}
@@ -343,7 +343,10 @@ int sortPassengers(Passenger *list, int len, int criterio)
 			{
 				if (list[i].isEmpty == 0 && list[j].isEmpty == 0)
 				{
-					if (((list[i].typePassenger == list[j].typePassenger) && strcmp(list[i].lastName, list[j].lastName) > 0 && criterio == UP) || (list[i].typePassenger != list[j].typePassenger && list[i].typePassenger > list[j].typePassenger && criterio == UP) || ((list[i].typePassenger == list[j].typePassenger) && strcmp(list[i].lastName, list[j].lastName) < 0 && criterio == DOWN) || (list[i].typePassenger != list[j].typePassenger && list[i].typePassenger < list[j].typePassenger && criterio == DOWN))
+					if (((list[i].typePassenger == list[j].typePassenger) && strcmp(list[i].lastName, list[j].lastName) > 0 && criterio == UP) 
+					|| (list[i].typePassenger != list[j].typePassenger && list[i].typePassenger > list[j].typePassenger && criterio == UP) 
+					|| ((list[i].typePassenger == list[j].typePassenger) && strcmp(list[i].lastName, list[j].lastName) < 0 && criterio == DOWN) 
+					|| (list[i].typePassenger != list[j].typePassenger && list[i].typePassenger < list[j].typePassenger && criterio == DOWN))
 					{
 						listAux = list[i];
 						list[i] = list[j];
@@ -371,7 +374,10 @@ int sortPassengersByCode(Passenger *list, int len, int criterio)
 			{
 				if (list[i].isEmpty == 0 && list[j].isEmpty == 0 && list[i].statusFly == 1 && list[j].statusFly == 1)
 				{
-					if (((list[i].statusFly == list[j].statusFly) && strcmp(list[i].flycode, list[j].flycode) > 0 && criterio == UP) || (list[i].statusFly > list[j].statusFly && criterio == UP) || ((list[i].statusFly == list[j].statusFly) && strcmp(list[i].flycode, list[j].flycode) < 0 && criterio == DOWN) || (list[i].statusFly < list[j].statusFly && criterio == DOWN))
+					if (((list[i].statusFly == list[j].statusFly) && strcmp(list[i].flycode, list[j].flycode) > 0 && criterio == UP) //UP ASCENDENTE
+					|| (list[i].statusFly > list[j].statusFly && criterio == UP) 
+					|| ((list[i].statusFly == list[j].statusFly) && strcmp(list[i].flycode, list[j].flycode) < 0 && criterio == DOWN) //DOWN DESCENDENTE 
+					|| (list[i].statusFly < list[j].statusFly && criterio == DOWN))
 					{
 						listAux = list[i];
 						list[i] = list[j];
@@ -406,7 +412,7 @@ int informarPasajeros(Passenger *list, int len)
 					printf("\n** Pasajeros ordenados con exito ** \n\n");
 					if (listarPasajeros(list, len))
 					{
-						printf("---------------------------------------------------------------------------------\n");
+						printf("--------------------------------------------------------------------------------\n\n\n");
 					}
 					else
 					{
