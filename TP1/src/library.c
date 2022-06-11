@@ -188,3 +188,4 @@ void pausarConsola() {
 	fflush(stdin);
 	getchar();
 }
+

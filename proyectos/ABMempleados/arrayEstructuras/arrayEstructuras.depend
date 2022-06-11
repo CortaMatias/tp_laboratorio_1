@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1651505050 source:c:\users\leaos\onedrive\escritorio\programacion\arrayestructuras\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"empleado.h"
+	"fecha.h"
+	"sector.h"
+
+1651504859 c:\users\leaos\onedrive\escritorio\programacion\arrayestructuras\empleado.h
+	"fecha.h"
+	"sector.h"
+
+1651505040 source:c:\users\leaos\onedrive\escritorio\programacion\arrayestructuras\empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"empleado.h"
+
+1651492123 c:\users\leaos\onedrive\escritorio\programacion\arrayestructuras\fecha.h
+
+1651492097 source:c:\users\leaos\onedrive\escritorio\programacion\arrayestructuras\fecha.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"fecha.h"
+
+1651504068 c:\users\leaos\onedrive\escritorio\programacion\arrayestructuras\sector.h
+
+1651504340 source:c:\users\leaos\onedrive\escritorio\programacion\arrayestructuras\sector.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"sector.h"
+
