@@ -30,16 +30,24 @@ int main(){
     	switch(menu())
         {
         		case 1:
-                    controller_loadFromText("data.csv", listaPasajeros);
-                    flagAdd = ll_len(listaPasajeros);
+                    if(controller_loadFromText("data.csv", listaPasajeros)){
+                    	printf("Pasajeros cargados con exito");
+                    	flagAdd = ll_len(listaPasajeros);
+                    }
+
                     break;
                 case 2:
-                    controller_loadFromBinary("data.bin", listaPasajeros);
+                    if(controller_loadFromBinary("data.bin", listaPasajeros)){
+                    printf("Pasajeros cargados con exito");
                     flagAdd = ll_len(listaPasajeros);
+                    }
+
                     break;
                 case 3:
-                    controller_addPassenger(listaPasajeros);
-                    flagAdd++;
+                	if(controller_addPassenger(listaPasajeros)){
+                	printf("Pasajero cargados con exito");
+                	flagAdd++;
+                	}
                     break;
                 case 4:
                     if(flagAdd){
@@ -60,7 +68,7 @@ int main(){
 
                     break;
                 case 6:
-                    controller_ListPassenger(listaPasajeros);
+                	controller_ListPassenger(listaPasajeros);
                     break;
                 case 7:
                 	if(flagAdd){
